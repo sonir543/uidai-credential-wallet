@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frontend Developer Technical Assessment - UIDAI Innovation Vertical</title>
+  <style>
+    @page {
+      size: A4;
+      margin: 18mm 16mm 18mm 16mm;
+      @bottom-right {
+        content: counter(page);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 9pt;
+        color: #718096;
+      }
+    }
+    
+    * {
+      box-sizing: border-box;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    body {
+      font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      color: #1a202c;
+      line-height: 1.5;
+      font-size: 10pt;
+      margin: 0;
+      padding: 0;
+      background: #ffffff;
+    }
+
+    .header-tricolor {
+      height: 4px;
+      width: 100%;
+      background: linear-gradient(90deg, #ff9933 33.3%, #ffffff 33.3%, #ffffff 66.6%, #138808 66.6%);
+      border-radius: 2px;
+      margin-bottom: 14px;
+    }
+
+    .header-box {
+      border-bottom: 2px solid #0f2b48;
+      padding-bottom: 12px;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+    }
+
+    .org-title {
+      font-size: 8pt;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: #4a5568;
+      font-weight: 700;
+      margin: 0 0 4px 0;
+    }
+
+    .main-title {
+      font-size: 18pt;
+      font-weight: 800;
+      color: #0b1c33;
+      margin: 0;
+      line-height: 1.2;
+    }
+
+    .sub-title {
+      font-size: 10.5pt;
+      color: #2b6cb0;
+      font-weight: 600;
+      margin: 4px 0 0 0;
+    }
+
+    .badge-box {
+      text-align: right;
+      font-size: 8.5pt;
+      color: #4a5568;
+    }
+
+    .status-badge {
+      display: inline-block;
+      background: #ebf8ff;
+      color: #2b6cb0;
+      border: 1px solid #bee3f8;
+      padding: 3px 8px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 8pt;
+      text-transform: uppercase;
+      margin-bottom: 4px;
+    }
+
+    h2 {
+      font-size: 12.5pt;
+      color: #0b1c33;
+      border-left: 3.5px solid #d97706;
+      padding-left: 8px;
+      margin: 16px 0 8px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+
+    h3 {
+      font-size: 10.5pt;
+      color: #2d3748;
+      margin: 12px 0 4px 0;
+    }
+
+    p {
+      margin: 0 0 8px 0;
+    }
+
+    ul, ol {
+      margin: 0 0 8px 0;
+      padding-left: 18px;
+    }
+
+    li {
+      margin-bottom: 3px;
+    }
+
+    .highlight-card {
+      background: #f7fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 10px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 8px 0 14px 0;
+      font-size: 9pt;
+    }
+
+    th, td {
+      border: 1px solid #cbd5e0;
+      padding: 6px 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #edf2f7;
+      color: #2d3748;
+      font-weight: 700;
+    }
+
+    code {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 8.5pt;
+      background: #edf2f7;
+      padding: 1px 4px;
+      border-radius: 3px;
+      color: #2d3748;
+    }
+
+    pre {
+      font-family: 'Consolas', 'Courier New', monospace;
+      font-size: 8pt;
+      background: #1a202c;
+      color: #e2e8f0;
+      padding: 8px 12px;
+      border-radius: 5px;
+      overflow-x: hidden;
+      margin: 6px 0 10px 0;
+      line-height: 1.4;
+    }
+
+    .page-break {
+      page-break-before: always;
+    }
+
+    .repo-link-box {
+      background: #fefcbf;
+      border: 1px solid #f6e05e;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin: 12px 0;
+      font-size: 9.5pt;
+    }
+
+    .repo-link-box a {
+      color: #b7791f;
+      font-weight: 700;
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header-tricolor"></div>
+
+  <div class="header-box">
+    <div>
+      <p class="org-title">UIDAI Innovation Vertical · Technical Assessment</p>
+      <h1 class="main-title">Verifiable Credential Wallet</h1>
+      <p class="sub-title">Progressive Web App Architecture, Security Thinking & Offline Verification</p>
+    </div>
+    <div class="badge-box">
+      <span class="status-badge">Technical Assignment</span><br>
+      <strong>Candidate:</strong> sonir543 (<a href="mailto:sonir543@gmail.com" style="color:inherit;">sonir543@gmail.com</a>)<br>
+      <strong>Role:</strong> Frontend Developer<br>
+      <strong>Stack:</strong> React 19 · TypeScript · Vite · PWA
+    </div>
+  </div>
+
+  <div class="repo-link-box">
+    <strong>Public Source Code Repository:</strong><br>
+    GitHub: <a href="https://github.com/sonir543/uidai-credential-wallet" target="_blank">https://github.com/sonir543/uidai-credential-wallet</a>
+  </div>
+
+  <h2>1. Executive Summary & Approach</h2>
+  <p>
+    This project implements a test <strong>Digital Identity Wallet Progressive Web App (PWA)</strong> for the <strong>UIDAI Sandbox</strong> according to the official technical specification. The application empowers users to manage verifiable identity documents (Aadhaar, PAN, Driving Licence), securely inspect masked credentials with strict automated lifetime controls, and maintain 100% offline functionality via a dedicated Service Worker caching layer.
+  </p>
+
+  <div class="highlight-card">
+    <strong>Core Architecture Tenets:</strong>
+    <ul>
+      <li><strong>Predictable State Machine:</strong> Pure unidirectional state flow via React Context and <code>useReducer</code>, eliminating race conditions across <code>loading</code>, <code>error</code>, <code>empty</code>, and <code>success</code> states.</li>
+      <li><strong>Defensive Security Lifecycle:</strong> Plaintext identifiers are decrypted into component memory only upon explicit user gesture and are guaranteed to be purged from memory and DOM after exactly 10 seconds.</li>
+      <li><strong>Accessible by Design:</strong> Compliant with WCAG 2.1 AA standards featuring full keyboard operability, explicit ARIA state declarations, and polite screen-reader announcements.</li>
+      <li><strong>Resilient Offline PWA:</strong> Service Worker intercepts <code>GET /api/credentials</code> using a Network-First strategy with Cache API fallback and metadata header tagging (<code>X-Wallet-Cache: offline</code>).</li>
+    </ul>
+  </div>
+
+  <h2>2. Part 1: Credential Dashboard & State Management</h2>
+  <p>
+    The credential dashboard fetches mock credentials from <code>GET /api/credentials</code> (served via mock Vite server middleware). State is modeled as a formal discrete finite state machine managed with a typed reducer.
+  </p>
+
+  <table>
+    <thead>
+      <tr>
+        <th>State</th>
+        <th>Trigger / Action</th>
+        <th>UI Representation</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><code>idle / loading</code></td>
+        <td><code>FETCH_START</code></td>
+        <td>Animated SVG shimmer skeleton cards mirroring the exact layout</td>
+      </tr>
+      <tr>
+        <td><code>success</code></td>
+        <td><code>FETCH_SUCCESS</code></td>
+        <td>Responsive 3-column credential card grid with smart chip insignia</td>
+      </tr>
+      <tr>
+        <td><code>empty</code></td>
+        <td><code>FETCH_EMPTY</code></td>
+        <td>Zero-state illustration with guidance and "Check again" trigger</td>
+      </tr>
+      <tr>
+        <td><code>error</code></td>
+        <td><code>FETCH_ERROR</code></td>
+        <td>Descriptive failure alert with retry button & status recovery</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <p>
+    <strong>Layout Responsiveness:</strong> Built with CSS Grid and Flexbox:
+  </p>
+  <ul>
+    <li><strong>Mobile (&lt;640px):</strong> Stacked 1-column layout with 48px+ touch targets for thumb-friendly mobile interaction.</li>
+    <li><strong>Tablet (641px–1024px):</strong> 2-column balanced grid with accessible card headers.</li>
+    <li><strong>Desktop (&gt;1024px):</strong> 3-column expansive view with live sandbox controls, network status pill, and statistics strip.</li>
+  </ul>
+
+  <div class="page-break"></div>
+
+  <h2>3. Part 2: SecureDataMask Component & Security Threat Model</h2>
+  <p>
+    The <code>SecureDataMask</code> component solves the core privacy requirement: sensitive identifiers (Aadhaar, PAN, DL) must never remain permanently visible on screen or linger in the DOM tree.
+  </p>
+
+  <div class="grid-2">
+    <div class="highlight-card">
+      <strong>Default Masked State:</strong>
+      <ul>
+        <li>Shows only the last 4 characters in the canonical pattern: <code>XXXX-XXXX-1234</code>.</li>
+        <li>Full plaintext is <strong>absent from the DOM</strong> (verified via test assertions).</li>
+        <li>Screen readers hear: <em>"Aadhaar number hidden, ending in 0123."</em></li>
+      </ul>
+    </div>
+    <div class="highlight-card">
+      <strong>Revealed State (10s Window):</strong>
+      <ul>
+        <li>"Tap to Reveal" stores full plaintext in local state <code>revealedPlaintext</code>.</li>
+        <li>Smooth 60fps CSS hardware-accelerated timer bar counts down 10 seconds.</li>
+        <li>Polite live region announces reveal event to assistive technology.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3>Security Purge Lifecycle & Defensive Triggers:</h3>
+  <p>
+    When the value is re-masked, <code>setRevealedPlaintext(null)</code> is executed immediately. The full value is completely cleared from memory and unmounted from the DOM:
+  </p>
+  <ul>
+    <li><strong>10-Second Expiry:</strong> A managed <code>setTimeout</code> triggers automatic conceal at exactly 10,000ms.</li>
+    <li><strong>Manual Conceal:</strong> Clicking "Hide" instantly clears plaintext state and resets the timer.</li>
+    <li><strong>Visibility API (Tab Switch / Screen Lock):</strong> Listening to <code>document.visibilityState === 'hidden'</code> ensures that switching tabs or minimizing the browser immediately conceals sensitive data.</li>
+    <li><strong>Escape Key Dismissal:</strong> Accessible <code>Escape</code> key handler allows instant keyboard concealment.</li>
+    <li><strong>Component Unmount:</strong> Cleanup effect clears pending timers to prevent memory leaks or dangling callbacks.</li>
+  </ul>
+
+  <h2>4. Part 3: Offline Support, PWA & Service Worker</h2>
+  <p>
+    Offline capabilities are powered by <code>public/sw.js</code>, implementing a <strong>Network-First caching strategy</strong> tailored for financial and identity credentials:
+  </p>
+  <pre>
+Client Request: GET /api/credentials?scenario=success
+   │
+   ├──&gt; [1] Try Network (Fetch)
+   │       ├── 200 OK: Cache response clone under canonical key ('/api/credentials')
+   │       └── Error / Disconnected: Catch network exception
+   │
+   └──&gt; [2] Fallback to Cache API: caches.match(cacheKey)
+           ├── Found: Inject header 'X-Wallet-Cache: offline' & return cached 200 OK
+           └── Not Found: Return synthetic 503 Service Unavailable JSON
+  </pre>
+
+  <h2>5. Testing Strategy & Verification</h2>
+  <p>
+    Automated test coverage is implemented in <strong>Vitest</strong> with <strong>React Testing Library</strong> and <strong>@testing-library/user-event</strong>. The suite runs with <strong>0 warnings and 0 errors</strong> across 41 unit and contract tests:
+  </p>
+  <ul>
+    <li><code>SecureDataMask.test.tsx</code> (18 tests): Uses fake timers (<code>vi.useFakeTimers()</code>). Asserts that the identifier is visible at 9,999ms, concealed at exactly 10,000ms, immediately re-masked if the secret prop changes while revealed, and verified completely purged from <code>container.innerHTML</code>.</li>
+    <li><code>Dashboard.test.tsx</code> (4 tests): Tests in-flight loading state, success data rendering, empty wallet zero-state, and error state recovery on retry click.</li>
+    <li><code>credentialsNetworkFirst.test.ts</code> (6 tests): Validates caching of 200 OK responses, refusal to cache 500 errors, cache fallback on network drop, and 503 handling when cache is cold.</li>
+    <li><code>sw.contract.test.ts</code> (3 tests): Enforces contract rules on <code>public/sw.js</code>.</li>
+    <li><code>credentialsReducer.test.ts</code> (4 tests) &amp; <code>maskSensitiveValue.test.ts</code> (6 tests).</li>
+  </ul>
+
+  <div class="highlight-card">
+    <strong>Running the App and Tests:</strong>
+    <pre>
+# Install dependencies
+npm install
+
+# Run unit and contract test suite (41 tests)
+npm test
+
+# Launch Vite development server
+npm run dev
+
+# Build production bundle and preview PWA
+npm run build
+npm run preview
+    </pre>
+  </div>
+
+  <h2>6. Assumptions & Sandbox Scope</h2>
+  <ul>
+    <li><strong>Sandbox Identifiers:</strong> Identifiers used (e.g. <code>2345 6789 0123</code>, <code>ABCDE1234F</code>) are fictional test values for sandbox validation.</li>
+    <li><strong>State Separation:</strong> In compliance with the prompt, the "clear from component state" security rule is strictly isolated within the <code>SecureDataMask</code> component layer.</li>
+    <li><strong>PWA Interception:</strong> The service worker intercepts <code>/api/credentials</code> while preserving Vite HMR in local development.</li>
+  </ul>
+
+</body>
+</html>

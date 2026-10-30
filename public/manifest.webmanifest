@@ -1,0 +1,17 @@
+{
+  "name": "UIDAI Sandbox Credential Wallet",
+  "short_name": "Sandbox Wallet",
+  "description": "Test digital identity wallet for the UIDAI sandbox.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f3eadc",
+  "theme_color": "#0b1c33",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}
